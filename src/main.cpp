@@ -2,6 +2,7 @@
 
 short int red_status = 0;
 short int yelow_status = 0;
+short int green_status = 0;
 short int counter = 0;
 
 void setup() {
@@ -52,7 +53,23 @@ void loop() {
       yelow_status = 0;
       digitalWrite(12, LOW);
       delay(500);
+      green_status = 1;
       digitalWrite(7, HIGH);
+    }
+    delay(1000);
+    counter +=1;
+  }
+
+  if (green_status == 1)
+  {
+    if (counter == 10)
+    {
+      counter = 0;
+      green_status = 0;
+      digitalWrite(7, LOW);
+      delay(500);
+      digitalWrite(13, HIGH);
+      red_status = 1;
     }
     delay(1000);
     counter +=1;
