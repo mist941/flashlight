@@ -2,7 +2,6 @@
 
 short int red_status = 0;
 short int yelow_status = 0;
-short int green_status = 0;
 short int counter = 0;
 
 void setup() {
